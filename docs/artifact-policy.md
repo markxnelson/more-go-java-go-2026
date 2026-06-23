@@ -1,6 +1,6 @@
 # Artifact Policy
 
-This source package tracks source, documentation, fixtures, manifest templates, and empty output directories only.
+This source package tracks source, documentation, fixtures, and manifest templates only.
 
 ## Do Not Commit
 
@@ -33,7 +33,7 @@ Generated files should be written under:
 - `artifacts/tmp/`
 - `analysis/output/`
 
-Each directory contains a `.gitkeep` placeholder so the package structure is available before any run.
+The benchmark scripts create these directories as needed before a run.
 
 ## Manifest Requirement
 

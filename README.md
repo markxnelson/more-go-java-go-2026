@@ -25,7 +25,7 @@ The accepted service contract is:
 - `seed`
 - `extraWork`
 
-Strict validation requirements are captured in `contracts/work-contract.json` and should be treated as the source of truth for both the Go and Java services.
+Strict validation requirements are defined by the rules below and exercised by the shared validation fixtures. Both the Go and Java services should treat those rules and fixtures as the public contract for comparable behavior.
 
 ## Validation Rules
 
@@ -56,7 +56,6 @@ The benchmark source must preserve these requirements:
 
 ## Layout
 
-- `contracts/work-contract.json` - machine-readable shared contract
 - `fixtures/valid/` - accepted request examples
 - `fixtures/errors/` - negative request examples
 - `manifests/` - runtime and matrix manifest templates
@@ -84,7 +83,7 @@ Use writable local caches when home caches are unavailable:
 
 ## Artifact Policy
 
-Generated artifacts belong under `artifacts/` and are ignored by Git except for placeholder files. Do not commit raw benchmark output, process samples, GC logs, JFR recordings, Go profiles, runtime metric snapshots, extracted JDKs, binaries, AOT cache files, or temporary files.
+Generated artifacts belong under `artifacts/` and are ignored by Git. The benchmark scripts create output directories as needed. Do not commit raw benchmark output, process samples, GC logs, JFR recordings, Go profiles, runtime metric snapshots, extracted JDKs, binaries, AOT cache files, or temporary files.
 
 ## Profiling Support
 

@@ -12,9 +12,8 @@ Use these gates before treating a run as usable.
 
 ## Contract Gate
 
-Validate both services against:
+Validate both services against the public service contract in the README and the shared fixture sets:
 
-- `contracts/work-contract.json`
 - `fixtures/valid/`
 - `fixtures/errors/`
 

@@ -2,7 +2,7 @@
 
 This source package does not contain benchmark measurements.
 
-The files in this part are fixtures, documentation, manifests, and empty artifact placeholders. They are intended to support later validation and benchmark runs.
+The files in this part are fixtures, documentation, manifests, source code, and scripts. They are intended to support later validation and benchmark runs.
 
 Before publishing or interpreting performance data:
 
