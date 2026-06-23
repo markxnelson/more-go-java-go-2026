@@ -1,0 +1,108 @@
+{
+  "name": "work-contract",
+  "version": "article-07",
+  "routes": {
+    "health": {
+      "path": "/health",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "getResponse": {
+        "status": 200,
+        "contentType": "application/json",
+        "body": {
+          "status": "ok"
+        },
+        "bodyExact": "{\"status\":\"ok\"}"
+      },
+      "headResponse": {
+        "status": 200,
+        "bodyBytes": 0
+      }
+    },
+    "work": {
+      "path": "/work",
+      "methods": [
+        "POST"
+      ],
+      "contentType": "application/json",
+      "bodyLimitBytes": 4096,
+      "limitEnforcement": {
+        "readAtMostBytesBeforeDecode": 4097,
+        "rejectWhenDecodedBodyBytesGreaterThan": 4096
+      },
+      "jsonType": "object",
+      "required": [
+        "requestId",
+        "payloadSize",
+        "seed",
+        "extraWork"
+      ],
+      "fields": {
+        "requestId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "payloadSize": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 131072
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "extraWork": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "strictRules": [
+        "reject invalid content type",
+        "reject unknown fields",
+        "reject duplicate fields",
+        "reject missing required fields",
+        "reject scalar type violations",
+        "reject wrong scalar types",
+        "reject quoted numeric strings",
+        "reject numeric bound violations",
+        "reject invalid json",
+        "reject multiple json documents",
+        "reject decoded bodies larger than 4096 bytes"
+      ],
+      "successResponse": {
+        "status": 200,
+        "contentType": "application/json",
+        "requiredFields": [
+          "requestId",
+          "payloadSize",
+          "extraWork",
+          "checksum",
+          "ok"
+        ],
+        "fieldTypes": {
+          "requestId": "string",
+          "payloadSize": "integer",
+          "extraWork": "integer",
+          "checksum": "integer",
+          "ok": "boolean"
+        },
+        "okValue": true
+      },
+      "errorEnvelope": {
+        "contentType": "application/json",
+        "bodyShape": {
+          "ok": false,
+          "error": {
+            "code": "stable_machine_code",
+            "message": "human_readable_message"
+          }
+        }
+      }
+    }
+  }
+}

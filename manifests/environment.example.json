@@ -1,0 +1,36 @@
+{
+  "schema": "environment-manifest-example-v1",
+  "capturedAtUtc": "YYYY-MM-DDTHH:MM:SSZ",
+  "host": {
+    "hostname": "example-host",
+    "os": "Linux",
+    "kernel": "example-kernel",
+    "architecture": "x86_64",
+    "cpuModel": "example-cpu",
+    "cpuCount": 0,
+    "effectiveCpuList": "all"
+  },
+  "tools": {
+    "go": {
+      "path": "go",
+      "version": "go version ..."
+    },
+    "java": {
+      "path": "java",
+      "version": "java version ..."
+    },
+    "maven": {
+      "path": "mvn",
+      "version": "Apache Maven ..."
+    }
+  },
+  "package": {
+    "helidonVersion": "4.4.1",
+    "bodyLimitBytes": 4096,
+    "bodyLimitReadBytes": 4097
+  },
+  "notes": [
+    "This is an example template only.",
+    "Do not treat this file as a captured benchmark environment."
+  ]
+}

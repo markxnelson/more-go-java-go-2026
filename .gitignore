@@ -1,0 +1,90 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+*.local
+
+# Build output
+target/
+**/target/
+build/
+dist/
+out/
+bin/
+**/bin/
+coverage/
+*.class
+*.jar
+*.war
+*.ear
+
+# Java/Maven transient files
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+hs_err_pid*
+replay_pid*
+*.hprof
+*.jfr
+*.jfc
+
+# Go transient files
+*.test
+*.prof
+cpu.pprof
+heap.pprof
+
+# Caches
+.cache/
+**/.cache/
+.gocache/
+.gomodcache/
+.m2/
+
+# Runtime payloads and extracted JDKs
+artifacts/runtimes/
+**/extract/
+**/jdk-*/
+**/java-*-openjdk-*/
+
+# Generated benchmark and profiling artifacts
+artifacts/env/*
+artifacts/logs/*
+artifacts/materialization/*
+artifacts/process/*
+artifacts/profiles/*
+artifacts/raw/*
+artifacts/summary/*
+artifacts/tmp/*
+analysis/output/*
+manifests/comparable-profiled-*.csv
+manifests/java-runtimes.json
+
+# Preserve placeholder directories
+!artifacts/.gitkeep
+!artifacts/env/.gitkeep
+!artifacts/logs/.gitkeep
+!artifacts/materialization/.gitkeep
+!artifacts/process/.gitkeep
+!artifacts/profiles/.gitkeep
+!artifacts/raw/.gitkeep
+!artifacts/summary/.gitkeep
+!artifacts/tmp/.gitkeep
+!analysis/output/.gitkeep
+!manifests/.gitkeep
+
+# Common generated result names outside artifacts
+*-results.json
+*-results.csv
+*-results.jsonl
+benchmark-*.json
+benchmark-*.csv
+benchmark-*.jsonl

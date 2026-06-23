@@ -1,0 +1,11 @@
+service,variant,fixture,concurrency,rate,repeat,profile
+go,go-http,work-7b,1,0,1,false
+go,go-http,work-7b,4,0,1,false
+go,go-http,work-2kb,1,0,1,false
+go,go-http,work-2kb,4,0,1,false
+java,java-helidon,work-7b,1,0,1,false
+java,java-helidon,work-7b,4,0,1,false
+java,java-helidon,work-2kb,1,0,1,false
+java,java-helidon,work-2kb,4,0,1,false
+go,go-http,work-7b,1,800,1,true
+java,java-helidon,work-7b,1,800,1,true
